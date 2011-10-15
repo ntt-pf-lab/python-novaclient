@@ -96,7 +96,7 @@ class OpenStackComputeShell(object):
                 '1.1': shell_v1_1,
             }[version]
         except KeyError:
-            actions_module = shell_v1_0
+            actions_module = shell_v1_1
 
         self._find_actions(subparsers, actions_module)
         self._find_actions(subparsers, self)
@@ -194,7 +194,7 @@ class OpenStackComputeShell(object):
                 "1.1": shell_v1_1.CLIENT_CLASS,
             }[version]
         except KeyError:
-            return shell_v1_0.CLIENT_CLASS
+            return shell_v1_1.CLIENT_CLASS
 
     @utils.arg('command', metavar='<subcommand>', nargs='?',
                     help='Display help for <subcommand>')
